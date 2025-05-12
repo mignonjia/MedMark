@@ -1,0 +1,41 @@
+general:
+  model_name_or_path: "/data2/mingjia/Mistral-7B-Instruct-v0.2"  # "/data2/mingjia/Llama-3.1-8B-Instruct" # 
+  model_STS: "/data2/mingjia/SFR-Embedding-2_R"
+  load_fp16: true
+  use_gpu: true
+
+dataset:
+  dataset_name: "HealthSearchQA" # "radiology" # "HealthSearchQA" # 
+  dataset_config_name: None
+  dataset_split: test
+
+generation:
+  new_tokens: 100
+  no_repeat_ngram_size: None
+  min_prompt_tokens: None
+  max_input_len: None
+  limit_indices: null
+  use_sampling: true
+  sampling_temp: 1.0
+  top_k: 50
+  top_p: 0.9
+  generation_seed: null
+  batch_size: 20
+
+watermark:
+  scheme: "MedMark" 
+  wm_key: 0
+  ignore_repeated_bigrams: false
+  detection_z_threshold: 3.0
+  embed_scaler: 100
+  ckpt_path: None
+  ckpt_folder: None 
+  normalizers: ""
+  gamma: ""
+  store_spike_ents: true
+  cnt_fpr: 10000
+  context_window: 1
+
+logging:
+  log_generated_text: True
+
