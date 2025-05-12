@@ -23,9 +23,8 @@ def model_loader_dist_shift(args, device, detect_only=False):
         if not detect_only:
             model.generation_config.pad_token_id = tokenizer.pad_token_id
     else:
-        # embed_matrix = AutoModelForCausalLM.from_pretrained("/data2/mingjia/Mistral-7B-Instruct-v0.2", torch_dtype=d_type).to(device).get_input_embeddings().weight
         embed_matrix = torch.load("data/embed/embedding_matrix_fp16.pt", map_location=device, weights_only=True)
-        tokenizer_trained = AutoTokenizer.from_pretrained("/data2/mingjia/Mistral-7B-Instruct-v0.2", padding_side="left")
+        tokenizer_trained = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2", padding_side="left")
         tokenizer_trained.pad_token_id = tokenizer_trained.eos_token_id
         if 'llama' in args.model_name_or_path.lower():
             model_short_name = 'llama'

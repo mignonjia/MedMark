@@ -5,8 +5,8 @@ echo "Running training: $RUN_NAME"
 
 # CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=2 train_mistral.py \
 CUDA_VISIBLE_DEVICES=1 python train_mistral.py \
-    --model_name_or_path=/data2/mingjia/Mistral-7B-Instruct-v0.2 \
-    --model_STS_name_or_path=/data2/mingjia/SFR-Embedding-2_R \
+    --model_name_or_path=mistralai/Mistral-7B-Instruct-v0.2 \
+    --model_STS_name_or_path=Salesforce/SFR-Embedding-2_R \
     --dtype=fp16 \
     --fix_gamma=False \
     --scale=100 \

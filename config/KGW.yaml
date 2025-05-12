@@ -1,6 +1,6 @@
 general:
-  model_name_or_path: "/data2/mingjia/Mistral-7B-Instruct-v0.2" # "/data2/mingjia/Llama-3.1-8B-Instruct" # 
-  model_STS: "/data2/mingjia/SFR-Embedding-2_R"
+  model_name_or_path: "mistralai/Mistral-7B-Instruct-v0.2" 
+  model_STS: "Salesforce/SFR-Embedding-2_R"
   load_fp16: true
   use_gpu: true
 
